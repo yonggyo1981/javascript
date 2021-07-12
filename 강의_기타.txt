@@ -28,10 +28,38 @@
 	
 	
 2. 변수 선언자
-	var - 변수 선언자
+	var - 변수 선언자 (X)
 	
-	let  - var과 거의 동일
+	let  - var과 거의 동일(변수) - O
 			유효한 범위에서 차이가 있다
 			(중괄호 안에서만 유효한 범위 { })
 			
-	const 
+	const - constants - 상수(변하지 않는 값)
+	
+	
+	ECMAScript -> 자바스크립트 표준
+	
+	ECMAScript 6+ 
+	es6+
+	
+	2015 / -> morden javascript(ECMAScript6)
+	2016 ECMAScript6+
+	2017
+	2018 
+	
+	ECMAScript6 부터 let, const 사용 권장
+	
+	문제점
+	인터넷 익스플로러(ES6 X -> ES5 지원) - ES6문법을 적용하면 오류 발생
+	엣지(ES6+ 지원)
+	
+	babeljs.io -> 구 IE에서 ES6 문법을 지원하도록 변환해주는 라이브러리
+	https://babeljs.io/
+	
+	
+	let, const 
+	
+	const로 변수를 사용하고 
+	값이 변경이 될 필요가 있는 경우만 let로 변경
+	
+	
