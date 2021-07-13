@@ -54,3 +54,16 @@
 	function OrderProcess() {
 	
 	}
+	
+	
+	생성자 인수 --> 객체 생성시 초기화 역할
+	function Person(age, gender) {
+		this.age = age;
+		this.gender = gender;
+	}
+	
+	const person1 = new Person(40, "F");
+	Person {age: 40, gender: "F"}
+	
+	const person2 = new Person(50, "M");
+	Person {age: 50, gender: "M"}

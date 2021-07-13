@@ -1,0 +1,16 @@
+String 생성자
+	-> 문자열을 처리하는 생성자
+	-> 문자 'a'
+	-> 문자열 'abcdefg' -> 문자 연속적으로 써 있는 형태(문장)
+
+	const str = "abcdefghijk";
+	str.charAt(1); // b 
+	
+	str는 원시타입 문자이고 객체 X -> 그러나 charAt 메서드 호출
+	const str = "abcdefghijk";
+	str.charAt() 호출하는 순간 
+	내부적으로 new String(str);
+	호출이 완료가 되면 다시 원래 원시타입으로 돌아간다
+	
+	래퍼 생성자
+	
