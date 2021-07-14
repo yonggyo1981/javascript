@@ -22,6 +22,7 @@ Number
 				
 		isNaN -> 숫자 아니면 true, 숫자이면 false
 		
+		.iNaN() --> isNaN()
 		.parseFloat() -> 문자열(숫자와 관련된) -> 실수, 문자열이 숫자와 관련 X -> NaN(Not a Number)
 		.parseInt() -> 문자열(숫자와 관련된) -> 정수, 숫자와 관련 X -> NaN(Not a Number)
 		
@@ -30,3 +31,11 @@ Number
 		
 		.toFixed(자리수) --> 소수를 지정된 자리수 만큼 잘라서 문자열로 반환 
 		
+		
+		Number 생성자 -> 함수 형태 Number()로 사용 가능 
+		문자열 -> 숫자 
+		
+		
+		isNaN("문자")
+			-> Number("문자") -> 숫자로 변환 -> 문자로 된 숫자가 오더라도 숫자로 인식 -> false
+			-> Number("숫자와 관련 없는 문자") -> NaN 반환 -> true
