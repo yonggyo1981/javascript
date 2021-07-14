@@ -54,6 +54,7 @@ function sum() {
 
 자바스크립트 함수 -> 1급객체
 	1. 인수를 함수로 쓸 수 있고 
+		
 	
 	2. 함수를 반환 값으로 쓸 수 있다
 	
@@ -70,3 +71,65 @@ function 브라우저의 메인함수() {
  
  일반적으로 선언하는 변수는 스택 메모리 영역에 정의 된다
  
+ function innerFunc() {
+ 
+ }
+ --> 함수의 끌어올림 되므로 호출 위치는 상관 없다
+ 
+ const innerFunc = function() {
+ 
+ };
+ 
+ --> 함수의 끌어올림이 안된다, 호출은 바로 다음 부터 가능
+ 
+  1. const innerFunc; 선언 
+  2. window.innerFunc = undefined;
+  3. const innerFunc = function() { } 함수가 대입
+  
+2.  함수를 즉시 실행 하는 방법
+	(function() {
+		// 즉시 실행할 영역
+	})();
+
+	1) 인수 사용 가능 
+		(function(a,b) {
+		
+		})(2,3);
+		
+	2) 반환값 사용이 가능 
+		(function(a,b) {
+			return a + b;
+		})(2,3);
+		
+3. 가변 인수
+	1) 함수안에는 arguments 변수가 존재
+	- 인수로 사용된 값을 배열 객체로 보관
+	
+	function testFunc() {
+		let str = "";
+		for(let i = 0; i < arguments.length; i++) {
+			str += arguments[i] + ",";
+		}
+
+		return str;
+	}
+	
+	testFunc(1,2,3,4,5,6,7,8);
+	
+	testFunc(1,2,3);
+	
+	2) ...인수 (마침표 3개)
+		- 가변인수(개수 상관 없이 입력할 수 있는 인수)
+		
+		function testFunc(...str) {
+			console.log(str);
+		}
+		
+		testFunc(1,2,3,4);
+		
+		function testFunc(separator, ...str) {
+			console.log(separator);
+			console.log(str);
+		}
+		
+		testFunc("/", "apple", "mango", "orange", "banana");
