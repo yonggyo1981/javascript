@@ -52,3 +52,6 @@
  속성명 -> 변수의 명명 규칙
 		-> 따옴표로 감싸주면 명명 규칙 관련 없이 설정
  
+ 
+ const person = {};
+ const person = new Object(); -- 내부적으로 Object 생성자에 의해서 생성되어 있다
