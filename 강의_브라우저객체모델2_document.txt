@@ -36,3 +36,33 @@ window
 							
 					document.querySelectorAll("CSS 선택자");
 							- 매칭된 모든 요소가 선택 
+							
+			- 선택한 요소(Node)의 속성(Attribute)
+					.getAttribute("속성명") - 속성에 대한 값이 반환
+					.setAttribute("속성명", "값"); - 속성에 대한 값을 지정하거나 변경 
+					.removeAttribute("속성명") - 속성 제거 
+					
+					많이 사용되는 일부 속성은 선택한 요소의 하위 속성으로 바로 접근이 가능(getAttribute 사용하지 않아도 된다)
+					id 속성
+					class - className 속성
+					
+					
+					클래스 속성은 별로 관리 객체
+					선택 요소.classList 
+										.add -> 클래스 추가
+										.remove -> 클래스 제거
+										.toggle -> 클래스가 없으면 추가, 있으면 제거
+										.contains -> 클래스가 포함이 되어 있는지 체크 
+										
+					
+					속성명 
+						href, type, src ... --> 이미 기능적으로 구현되어 있는 속성
+						
+						만약 href 속성을 기능이 아니라 단순 사용자 정보 추가 사용
+						-> 기능에 영향을 준다 
+						
+						
+						사용자가 추가하는 추가 정보 속성명 규칙
+						data-속성명
+						
+				
