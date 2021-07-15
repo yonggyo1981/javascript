@@ -1,0 +1,7 @@
+window
+	- document(Document Object Model - DOM)
+			- 문서를 다루는 역할(HTML)
+			- 각종 태그
+			
+			DOMContentLoaded - DOM 트리 구축 완료 후 발생하는 이벤트
+			Load  - DOM 트리 구축 완료 후 각종 리소스(이미지, 비디오, 내부 iframe, 외부 css, 외부 js등 외부 자원)가 로드가 완료 되면 발생하는 이벤트
