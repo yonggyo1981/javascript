@@ -49,11 +49,17 @@
 				console.log("class4가 미존재");
 			}
 			
+			// data-num, data-price 속성 접근 
+			const dataNum = attr.getAttribute("data-num");
+			const dataPrice = attr.getAttribute("data-price");
+			console.log("dataNum", dataNum);
+			console.log("dataPrice", dataPrice);
+			
 			console.log(attr);
 		};
 		</script>
 	</head>
 	<body>
-		<div id='attribute' class='class1 class2 class3' num=20>속성테스트</div>
+		<div id='attribute' class='class1 class2 class3' data-num='20' data-price='10000'>속성테스트</div>
 	</body>
 </html>
