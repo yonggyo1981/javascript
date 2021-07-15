@@ -1,0 +1,52 @@
+브라우저 - 자바스크립트 해석기 
+	- 자바스크립트 코어(ECMAScript)
+	- 브라우저 객체 모델(Browser Object Model - BOM)
+		window
+			- document 
+						- 문서(HTML 문서)
+						- 문서를 통제하고 다루는 객체 
+						- 태그 -> HTML 태그를 선택하고 조작하는 것
+						- 선택
+						
+			- location 
+					- 웹브라우저의 URL의 정보 또는 통제를 위한 객체 
+					console.dir(window.location);
+					http -> 80포트 
+					https -> 443포트
+					
+					protocol -> 규약, 규칙, 의전 ... 
+								- http - 웹페이지 전송 규약
+							
+					.assign(url 주소) - URL 주소로 페이지 이동
+								.href 속성 - URL을 대입 하면 -> 페이지가 이동 
+								location.href="이동할 주소";
+								- 방문기록이 남는다 
+								
+					.reload() - 새로고침 
+					
+					.replace(url 주소) - URL 주소로 페이지가 치환(이동)
+										- 방문 기록이 남지 않는다
+					
+					
+			- history
+					- 방문기록과 관련된 객체 
+					.length - 방문한 웹사이트 갯수 
+					.scrollRestoration - auto(기본) 
+												- 페이지 이동 후 다시 뒤로 가기 했을때 현재 스크롤 위치 유지
+											  manual
+												- 페이지 이동 후 다시 뒤로 가기 했을때 현재 스크롤을 가장 상단으로 이동
+			
+					
+			
+			- screen 
+					- 브라우저의 문서가 출력되는 화면과 관련된 객체 
+					console.dir(window.screen);
+					landscape -> 가로가 긴 경우
+					portrait -> 세로로 긴 경우
+					
+			- navigator 
+					- 실행되고 있는 브라우저의 환경에 대한 정보
+					console.dir(window.navigator);
+					
+			
+			window. -> 생략 가능 
