@@ -23,7 +23,6 @@ window.onload = function() {
 		
 		const span = document.createElement("span");
 		
-		
 		td1.appendChild(input1);
 		td2.appendChild(input2);
 		td3.appendChild(input3);
