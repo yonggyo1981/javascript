@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset='utf-8'>
+		<script>
+		window.onload = function() {
+			const text = document.getElementById("text");
+			//console.log(text.getAttribute("type"));
+			//text.setAttribute("price", 1000);
+			//text.removeAttribute("price");
+			//text.setAttribute("class", "class1");
+			/*
+			text.className = text.className + " class4";
+			let className = text.className.split(" ");
+			className.forEach(function(classNm, i, _className) {
+				if (classNm == 'class2') {
+					_className.splice(i, 1);
+				}
+			});
+			
+			text.className = className.join(" ");
+			*/
+			
+			//text.classList.add("class4");
+			//text.classList.remove("class2");
+			//console.log(text.classList.contains('class4'));
+			//text.setAttribute("data-type", "radio");
+			//console.log(text.getAttribute("data-type"));
+			const dataSet = text.dataset;
+			
+			dataSet.consumer = 2000;
+			dataSet.price = 3000;
+			
+			setTimeout(function() {
+				delete dataSet.price;
+			}, 3000);
+			
+		};
+		</script>
+	</head>
+	<body>
+		<input type="text" id='text' class='class1 class2 class3' data-price='1000'>
+	</body>
+</html>
