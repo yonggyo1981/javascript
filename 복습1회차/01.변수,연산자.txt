@@ -1,0 +1,43 @@
+브라우저
+자바스크립트 코어(ECMAScript) - ECMAScript6+(ES6+)
++ 브라우저 객체모델
+window
+- location
+- history 
+- screen 
+- navigator
+- document 
+
+
+Node.js
+자바스크립트 코어(ECMAScript)
++ 노드 내장 모듈
+
+
+
+<script [async|defer] src='외부 경로'></script>
+
+async -> 비동기(DOM 트리구조 생성과 상관 없이 실행되므로 HTML요소는 선택이 안될 수도 있다.)
+		 -> 독립적인 무거운 스트립트 실행
+		 
+defer -> DOMContentLoaded 발생 이후 실행
+			(HTML 요소 선택 가능)
+			
+			
+var  - 함수 지역 범위을 가지는 선언자
+
+{  ~ } 지역 범위를 가지는 선언자 
+let  - 일반 변수 
+const  - 상수
+
+변수를 선언할때 가급적이면 const를 사용하고 
+변경이 필요할 때만 let을 사용
+
+
+변수의 명명 규칙 
+1. 알파벳, 숫자, _, $
+2. 숫자는 변수의 첫번째 문자로 올수 없다.
+3. 예약어는 사용할 수 없다
+
+
+2.3.7 변수에 저장할 수 있는 자료형
