@@ -39,5 +39,49 @@ const  - 상수
 2. 숫자는 변수의 첫번째 문자로 올수 없다.
 3. 예약어는 사용할 수 없다
 
+4. 자바스크립트 
+   원시값(기본자료형) + 객체
+   
+   false로 인식하는 값 
+   false, 0, undefined, null, ""
+   
+   
+   비어있는 객체 {} -> true 
+   
+   || -> 비교하는 두 대상 중 하나라도 true -> true
+   
+   
+   참인 조건 || ... 조건....
+   
+   (조건식)?참일때:거짓일때
+   
+   return (rs > 1)?true:false
+   if (rs> 1) {
+		return true;
+   } else {
+		return false;
+   }
+   
+   switch(키워드) {
+		case "1" : 
+			break;
+		case "2": 
+			break;
+			
+		default : 
+   }
 
-2.3.7 변수에 저장할 수 있는 자료형
+
+    반복문 
+	1. 
+	while (조건식) {
+		반복 되는 구간 
+	}
+	
+	2. 
+	do {
+		반복되는 구간 
+	} while(조건식);
+	
+	3. for 
+	
