@@ -76,6 +76,9 @@ const  - 상수
 	1. 
 	while (조건식) {
 		반복 되는 구간 
+		
+		반복 중단 - break;
+		반복을 건너 뛰기 - continue;
 	}
 	
 	2. 
@@ -85,3 +88,20 @@ const  - 상수
 	
 	3. for 
 	
+	
+	for (초기화식; 조건식; 증감식)
+	
+	for (let i = 0; i < 10; i++) {
+		for (let j = 0; j < 10; j++) {
+		
+		}
+	}
+	
+	
+	for (.... of ...) {
+	
+	}
+	
+	for ( key in 객체 ) {
+	
+	}
