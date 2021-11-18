@@ -44,3 +44,50 @@ function abc(x) {
 }
 
 const abc = (x) => x;  // x => x;
+
+this -> window
+method : function() {   // 생성자로서 사용 가능 - constructor 속성 O
+ 
+}
+
+method() { // 생성자로서 사용 불가 - constructor 속성 X 
+
+}
+
+5. 즉시 실행 함수
+(function(.....) {
+
+})();
+
+- 반환값 
+const result = (function() {
+		return "반환값";
+	})();
+console.log(result);
+
+- 매개변수
+const result = (function(num1, num2) {
+	return num1 + num2;
+})(10, 20);
+console.log(result);
+
+
+- 정보은닉 
+const student = (function() {
+		let studentId = "";
+		let studentName = "";
+		return {
+			set id(id) {
+				studentId = id;
+			},
+			get id() {
+				return studentId;
+			},
+			set name(name) {
+				studentName = name;
+			},
+			get name() {
+				return studentName;
+			}
+		};
+	})();

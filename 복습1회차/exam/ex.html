@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<script>
+	/*
+	const result = (function(num1, num2) {
+		return num1 + num2;
+	})(10, 20);
+	console.log(result);
+	*/
+	const student = (function() {
+		let studentId = "";
+		let studentName = "";
+		return {
+			set id(id) {
+				studentId = id;
+			},
+			get id() {
+				return studentId;
+			},
+			set name(name) {
+				studentName = name;
+			},
+			get name() {
+				return studentName;
+			}
+		};
+	})();
+	
+	</script>
+	</head>
+	<body></body>
+</html>
