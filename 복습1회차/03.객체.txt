@@ -14,3 +14,38 @@ Object 생성자
 const a = {}; // new Object();
 
 Object.assign
+
+생성자 
+	- prototype 
+				- constructor  -> 생성자를 만들수 있는 속성 
+				- __proto__ -> 링커 -> 상위 객체의 링크 연결(객체간 참조를 통해 상속이 이뤄진다)
+				
+				
+생성자 -> 함수 객체 
+-> 인스턴스 생성 
+인스턴스 --> __proto___ -> 생성자(함수 객체). prototype, 인스턴스는 생성자를 상속 받은 관계 
+
+
+				
+생성자 -> .prototype.메서드 = function () {
+
+}
+
+
+/// Abc.prototype.contructor
+function Abc() {
+	this.a = 10;
+	this.b = 20; 
+}
+
+/// Abc.prototype.method 
+Abc.prototype.method = function() {
+
+}
+
+const abc = new Abc();
+abc 
+	- prototype	
+			- __proto__ 
+						- Abc.prototype 
+								- method
