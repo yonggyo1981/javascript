@@ -71,3 +71,49 @@ abc
 	Object.create(상위 객체, {
 	
 	});
+	
+	
+	
+	객체 생성자, 일반 객체 
+	
+	prototype 
+		- constructor - 생성자 
+		- __proto__  - 링커(상속관계) -> 상위 객체의 prototype의 참조
+		
+		
+		
+		// 함수 객체 - 생성자 
+		function Person() {
+			this.a = 10; 
+			this.b = 20;
+		}
+		
+		Person 
+			prototype 
+				- constructor 
+				- __proto__ <--- Object.prototype의 참조
+				
+				
+		const person = new Person();
+			prototype 
+				- __proto__ <--- Person.prototype의 참조
+				
+
+
+	
+	
+	생성자 함수
+	function Abc() {
+		
+	}
+		- prototype 
+			- constructor - 인스턴스를 생성하는 재료
+			- __proto__ - 상속 관계에 있는 객체(prototype)의 주소 참조
+			
+	const abc = new Abc();
+		- prototype 
+			__proto__  - Abc.prototype
+			
+	 
+	 
+	Object.setProtoTypeOf 
