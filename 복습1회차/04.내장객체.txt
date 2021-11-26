@@ -37,6 +37,33 @@ let a = "abc"; // 기본자료형
 			
 Array 생성자
 	- 자바스크립트에서 배열 -> 배열 객체 -> 유사 배열
+	- length -> 요소의 개수 
 	
-			
-
+	Array.prototype 
+				.concat(...a); -> 배열 객체의 결합 
+				.filter(function(el, index, thisArg) { }) --> 테스트에 통과한 배열 요소만 반환 
+				.find(function(el, index, thisArg) { }) -> 테스트에 통과한 첫번재 요소만 반환 
+				.forEach(function(el, index, thisArg) { }) --> 요소를 반복 순회...
+			    .includes(..) -> 특정 요소가 포함되어 있는지 여부(true|false)
+				.indexOf(..) -> 특정 요소를 검색해서 요소가 있는 왼쪽 첫번째 위치의 인덱스 번호를 반환, 못찾으면 -1을 반환 
+				.lastIndexOf(..) -> 특정 요소를 오른쪽 부터 찾아서 인덱스 번호 반환, 못찾으면 -1
+				.join(...)  	--> 배열객체 -> 문자열로 결합  // PHP -> implode()
+							--> String.prototype.split(구분값) -> 문자열 -> 배열객체 
+									// PHP -> explode()
+				.keys()  --> 인덱스 번호 배열 
+				.map(function(el, index, thisArg) { }) -> 요소를 변경해서 반환
+				.pop() -> 배열의 마지막 요소를 제거, 제거한 요소를 반환 
+				.shift() -> 배열의 첫번째 요소를 제거, 제거한 요소를 반환 
+				.push(...a) -> 배열의 마지막 요소에 추가  //
+				.unshift(...a) -> 배열의 첫번째 요소에 추가 
+				.reduce(....)
+				.reverse() -> 배열의 순서를 반대로 변경 
+				.slice() -> 배열을 잘라서 새로운 배열로 반환 
+							(배열을 (깊은)복사할 때 ...)
+				.splice(...) -> 배열의 중간위치에 추가, 삭제 
+				
+	Array.isArray -> 배열 생성자로부터 생성된 인스턴스인지 체크
+				instanceof 
+				a instanceof Array 
+				
+				
