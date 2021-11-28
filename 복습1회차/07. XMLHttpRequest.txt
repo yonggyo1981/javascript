@@ -1,0 +1,19 @@
+07. XMLHttpRequest 
+Ajax
+
+		.open(method, url) -> 요청 할 URL 
+		.send(body) -> 요청을 실행 - 매개변수 body -> POST, PUT 요청 데이터 - 쿼리스트링 방식 + FormData 인스턴스
+		참고 ) FormData 인스턴스로 전송할때는 Content-Type을 따로 요청 헤더로 전송 X 
+		
+		-> 비동기 -> 대기 -> 서버에서  요청,응답하면 readystatechange 이벤트가 발생 
+		요청 단계  - 0(Unsent), 1(open), 2(send)
+		응답 단계 - 3(Loading), 4(Done)
+		
+		응답이 완료 되었을때, status - 응답코드 -> 200(성공)
+		
+		응답이 완료되면 XMLHttpRequest 인스턴스 response 또는 responseText에 응답 데이터 담겨 있다 
+		
+		
+		POST 방식일때는 Content-Type -> application/x-www-form-urlencoded 헤더 지정 
+		XMLHttpRequest
+			.setRequestHeader //  참고 ) java.net.URLConnection - setRequestProperty

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset='utf-8'>
+	<script>
+	window.addEventListener("DOMContentLoaded", function() {
+		const add = document.getElementById("add");
+		const menu = document.getElementById("menu");
+		//const list = menu.children;
+		//console.log(list);
+		//const first = menu.firstElementChild;
+		//const last = menu.lastElementChild;
+		//console.log(first);
+		//console.log(last);
+		//console.log(first.nextElementSibling); // last 
+		//console.log(last.previousElementSibling); // first
+		
+		add.addEventListener("click", function() {
+			const cnt = menu.childElementCount + 1;
+			const li = document.createElement("li");
+			const text = document.createTextNode("메뉴" + cnt);
+			li.appendChild(text);
+			
+			menu.appendChild(li);
+			
+			//console.log(li.parentElement); // ul#menu
+		});
+		
+		const remove = document.getElementById("remove");
+		remove.addEventListener("click", function() {
+			const li = menu.lastElementChild;
+			if (li) {
+				menu.removeChild(li);
+			}
+		});
+		
+		const change = document.getElementById("change");
+		change.addEventListener("click", function() {
+			const last = menu.lastElementChild;
+			const first = menu.firstElementChild;
+			
+			menu.replaceChild(last, first);
+		});
+		
+		const add2 = document.getElementById("add2");
+		add2.addEventListener("click", function() {
+			const li = document.createElement("li");
+			const text = document.createTextNode("메뉴(추가)");
+			li.appendChild(text);
+			
+			const last = menu.lastElementChild;
+			
+			menu.insertBefore(li, last);
+			
+		});
+	});
+	</script>
+</head>
+<body>
+	<button type="button" id="add">추가(1)</button>
+	<button type="button" id="add2">추가(2)</button>
+	<button type="button" id="remove">삭제</button>
+	<button type="button" id="change">변경</button>
+	<ul id="menu">
+		<li>메뉴1</li>
+		<li>메뉴2</li>
+	</ul>
+</body>
+</html>

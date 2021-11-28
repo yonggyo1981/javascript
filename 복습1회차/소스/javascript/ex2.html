@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset='utf-8'>
+	<script>
+	window.addEventListener("DOMContentLoaded", function() {
+		const add = document.getElementById("add");
+		const remove = document.getElementById("remove");
+		const menu = document.getElementById("menu");
+		// 추가 
+		add.addEventListener("click", function() {
+			const li = document.createElement("li");
+			const text = document.createTextNode("메뉴");
+			
+			li.classList.add("menu");
+			
+			li.setAttribute("price", 2000);
+			li.style = "background:yellow";
+			li.style.color = "red";
+			
+			li.appendChild(text);
+			menu.appendChild(li);
+		});
+		
+		// 삭제 
+		remove.addEventListener("click", function() {
+			const menuLI = document.querySelector("#menu .menu");
+			menu.removeChild(menuLI);
+		});
+	});
+	</script>
+</head>
+<body>
+	<button type="button" id="add">추가</button>
+	<button type="button" id="remove">제거</button>
+	<ul id='menu'></ul>
+</body>
+</html>

@@ -1,0 +1,127 @@
+09.Promise 
+
+비동기 실행의 문제점?
+호출 순서 대로 실행해도 -> 종료 시점은 먼저 끝나는 순서대로 종료
+순차적으로 절차가 있는 실행은 문제 발생
+예) 회원가입 -> 로그인
+
+비동기 실행시 순처적인 실행 순서를 유지하기 위한 방법
+1) 콜백 함수(es5)
+	function work(workNm, load, callback) {
+		setTimeout(function() {
+			console.log(workNm);
+			if (typeof callback == 'function')
+				callback();
+		}, load);
+	}
+	
+	work("첫번째 작업", 3000, function() {
+		work("두번째 작업", 1000, function() {
+			work("세번째 작업", 100, function() {
+				work("네번째 작업", 2000);
+			});
+		});
+	});
+	
+2) Promise 생성자(ES6+)
+	new Promise(function(resolve, reject) {
+	
+	});
+	
+	resolve가 호출 되면 promise 인스턴스의 then 메서드로 유입(실행 성공시를 가정하고 호출)
+	reject가 호출되면 promise 인스턴스의  catch 메서드로 유입(실행 실패시를 가정하고 호출)
+	
+	const promise = new Promise(function(resolve, reject) {
+		const isSuccess = false;
+		if (isSuccess) {
+			resolve("성공!");
+		} else {
+			reject("실패!");
+		}
+	});
+	
+	promise.then(function(msg) { // 성공시
+		console.log(msg);
+	})
+	.catch(function(msg) { // 실패 시
+		console.log(msg);
+	});
+	
+	
+	function work(workNm, load) {
+		return new Promise(function(resolve, reject) {
+			if (!workNm || !load) {
+				reject(workNm);
+			}
+			setTimeout(function() {
+				console.log(workNm);
+				resolve(workNm);
+			}, load);
+		});
+	}
+	
+	
+	work("첫번째 작업", 3000)
+    .then(function(workNm) {
+        console.log(workNm, " 완료!");
+        return work("두번째 작업", 1000);
+    })
+    .then(function(workNm) {
+        console.log(workNm, " 완료!");
+        return work("세번째 작업", 10);
+    })
+    .then(function(workNm) {
+        console.log(workNm, " 완료!");
+        return work("",0);
+    })
+    .catch(function(workNm) {
+       console.log(workNm, " 오류!");
+    });
+	
+	
+	1. 구조 개선이 이뤄졌어도 여전히 복잡 
+	2. 결과값을 활용하기에 불편한 점이 있다
+	   결과값을 활용하는 범위가 then의 매개변수의 함수 안에서 처리 해야 하므로 
+	   활용에 제한이 생긴다 
+	   
+	   
+async ~ await 
+	(구조 개선 O, 결과값 활용에 제한점도 개선)
+	-> 성공시 then으로 유입되는 결과가 -> 함수 호출 반환값으로 결과값이 나옴 
+	-> 실패시 catch로 유입되는 결과 -> try ~ catch의 catch 구간에서 확인 
+	
+	async 함수 내부에서 await 실행 함수
+	
+	function work(workNm, load) {
+		return new Promise(function(resolve, reject) {
+			if (!workNm || !load) {
+				reject(new Error(workNm));
+			}
+			setTimeout(function() {
+				console.log(workNm);
+				resolve(workNm);
+			}, load);
+		});
+	}
+	
+	async function run() {
+		try {
+			let result = await work("첫번째 작업", 3000);
+			console.log(result);
+			result = await work("두번째 작업", 1000);
+			console.log(result);
+			result = await work("세번째 작업", 10);
+			console.log(result);
+			await work("", 0);
+		} catch (err) { // reject가 호출되면 유입되는 구간
+			console.log(err);
+		}
+	}
+
+
+
+	비동기 실행 -> 쓰레드가 하나기 때문이다 
+	-> 쓰레드가 하나이므로 -> 서버 자원 소비가 적다 
+	-> 다중 접속에 유리
+	-> CPU 연산이 많이 필요한 작업은 불리
+	
